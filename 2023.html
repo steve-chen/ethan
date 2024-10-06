@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2024 Entries - My Travel & Life Photo Journal</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simplelightbox/2.10.3/simple-lightbox.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1, h2 {
+            color: #2c3e50;
+        }
+        .entry {
+            margin-bottom: 40px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 20px;
+        }
+        .entry::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+        .entry img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+        }
+        .entry .image-left {
+            float: left;
+            margin-right: 20px;
+            max-width: 50%;
+        }
+        .entry .image-right {
+            float: right;
+            margin-left: 20px;
+            max-width: 50%;
+        }
+        .entry .image-center {
+            display: block;
+            margin: 0 auto;
+        }
+        .lightbox-image {
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <h1>2024 Entries</h1>
+
+    <div id="october" class="entry">
+        <h2>October 2024 - Autumn in New York</h2>
+        <img src="/api/placeholder/400/300" alt="Central Park in autumn" class="image-left lightbox-image">
+        <p>The crisp autumn air in New York City was invigorating. Central Park was a canvas of reds, oranges, and yellows. I spent hours wandering through the winding paths, taking in the breathtaking foliage.</p>
+        <img src="/api/placeholder/300/400" alt="Empire State Building view" class="image-right lightbox-image">
+        <p>Later, I visited the Empire State Building. The view of the city bathed in the warm glow of the setting sun was unforgettable. The city's energy was palpable even from high above.</p>
+        <p>My visit coincided with the New York Film Festival, adding an extra layer of excitement to the trip. I managed to attend a few screenings and even spotted some celebrities on the red carpet!</p>
+    </div>
+
+    <div id="september" class="entry">
+        <h2>September 2024 - Tuscany Wine Tour</h2>
+        <img src="/api/placeholder/800/400" alt="Tuscan vineyard" class="image-center lightbox-image">
+        <p>September found me in the rolling hills of Tuscany, embarking on a wine tour that was as much about the scenery as it was about the wine. The vineyards stretched as far as the eye could see, their neat rows creating mesmerizing patterns across the landscape.</p>
+        <img src="/api/placeholder/300/400" alt="Wine tasting" class="image-right lightbox-image">
+        <p>I visited several family-owned wineries, each with its own unique charm and history. The highlight was a tasting at a 400-year-old estate, where the owner himself guided us through their selection of Chiantis and Super Tuscans.</p>
+        <p>The trip wasn't just about wine, though. I also explored charming medieval towns perched atop hills, their narrow cobblestone streets leading to unexpected piazzas and breathtaking viewpoints. The combination of history, culture, and gastronomy made this trip truly unforgettable.</p>
+    </div>
+
+    <!-- Add more entries as needed -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/simplelightbox/2.10.3/simple-lightbox.min.js"></script>
+    <script>
+        new SimpleLightbox('.lightbox-image', {
+            /* options */
+        });
+    </script>
+</body>
+</html>

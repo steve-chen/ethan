@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2024 Entries - My Travel & Life Photo Journal</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simplelightbox/2.10.3/simple-lightbox.min.css">
+    <style>
+        body, html {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            height: 100%;
+        }
+        .container {
+            display: flex;
+            height: 100%;
+        }
+        nav {
+            width: 200px;
+            background-color: #f4f4f4;
+            padding: 20px;
+            overflow-y: auto;
+        }
+        nav h2 {
+            margin-top: 0;
+        }
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+        nav ul ul {
+            padding-left: 20px;
+        }
+        main {
+            flex-grow: 1;
+            padding: 20px;
+            overflow-y: auto;
+        }
+        h1, h2 {
+            color: #2c3e50;
+        }
+        .entry {
+            margin-bottom: 40px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 20px;
+        }
+        .entry::after {
+            content: "";
+            display: table;
+            clear: both;
+        }
+        .entry img {
+            max-width: 100%;
+            height: auto;
+            margin-bottom: 10px;
+        }
+        .entry .image-left {
+            float: left;
+            margin-right: 20px;
+            max-width: 50%;
+        }
+        .entry .image-right {
+            float: right;
+            margin-left: 20px;
+            max-width: 50%;
+        }
+        .entry .image-center {
+            display: block;
+            margin: 0 auto;
+        }
+        .lightbox-image {
+            cursor: pointer;
+        }
+        .entry-preview {
+            overflow: hidden;
+            max-height: 300px;
+            position: relative;
+        }
+        .entry-full {
+            display: none;
+        }
+        .show-more, .show-less {
+            display: block;
+            margin-top: 10px;
+            color: #3498db;
+            cursor: pointer;
+            text-decoration: underline;
+        }
+        .fade-out {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 50px;
+            background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,1));
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <h2>Journal Entries</h2>
+            <ul>
+                <li>
+                    <strong>2024</strong>
+                    <ul>
+                        <li><a href="2024.html#october">October</a></li>
+                        <li><a href="2024.html#september">September</a></li>
+                        <!-- Add more months as needed -->
+                    </ul>
+                </li>
+                <li>
+                    <strong>2023</strong>
+                    <ul>
+                        <li><a href="2023.html#december">December</a></li>
+                        <li><a href="2023.html#november">November</a></li>
+                        <!-- Add more months as needed -->
+                    </ul>
+                </li>
+                <!-- Add more years as needed -->
+            </ul>
+        </nav>
+        <main>
+            <h1>2024 Entries</h1>
+
+            <div id="october" class="entry">
+                <h2>October 2024 - Autumn in New York</h2>
+                <div class="entry-preview">
+                    <img src="/api/placeholder/400/300" alt="Central Park in autumn" class="image-left lightbox-image">
+                    <p>The crisp autumn air in New York City was invigorating. Central Park was a canvas of reds, oranges, and yellows. I spent hours wandering through the winding paths, taking in the breathtaking foliage.</p>
+                    <p>Later, I visited the Empire State Building. The view of the city bathed in the warm glow of the setting sun was unforgettable. The city's energy was palpable even from high above.</p>
+                    <div class="fade-out"></div>
+                </div>
+                <div class="entry-full">
+                    <img src="/api/placeholder/300/400" alt="Empire State Building view" class="image-right lightbox-image">
+                    <p>My visit coincided with the New York Film Festival, adding an extra layer of excitement to the trip. I managed to attend a few screenings and even spotted some celebrities on the red carpet!</p>
+                    <p>One of the highlights of my trip was a boat tour around Manhattan. Seeing the city skyline from the water gave me a whole new perspective on its grandeur. The Statue of Liberty, standing tall and proud, was particularly moving to see up close.</p>
+                    <img src="/api/placeholder/500/300" alt="Manhattan skyline from water" class="image-center lightbox-image">
+                    <p>I also spent an afternoon exploring the vibrant neighborhoods of Brooklyn. From the trendy shops in Williamsburg to the historic brownstones in Park Slope, each area had its own distinct character. I ended the day watching the sunset from Brooklyn Bridge Park, with the Manhattan skyline providing a stunning backdrop.</p>
+                    <p>Food was another highlight of the trip. From grabbing a quick slice of New York pizza to indulging in a fancy dinner at a Michelin-starred restaurant, every meal was an adventure. I particularly enjoyed exploring the various ethnic cuisines available in the city, from authentic Chinese in Flushing to mouthwatering Italian in Little Italy.</p>
+                    <img src="/api/placeholder/300/400" alt="New York street food" class="image-left lightbox-image">
+                    <p>As my trip came to an end, I realized that New York in autumn is truly magical. The combination of the changing seasons, the city's energy, and the wealth of cultural experiences made for an unforgettable journey. I left with a camera full of photos, a heart full of memories, and a strong desire to return soon.</p>
+                </div>
+                <a class="show-more">Show More</a>
+                <a class="show-less" style="display: none;">Show Less</a>
+            </div>
+
+            <!-- Add more entries as needed -->
+
+        </main>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/simplelightbox/2.10.3/simple-lightbox.min.js"></script>
+    <script>
+        new SimpleLightbox('.lightbox-image', {
+            /* options */
+        });
+
+        document.querySelectorAll('.show-more').forEach(button => {
+            button.addEventListener('click', function() {
+                const entry = this.closest('.entry');
+                entry.querySelector('.entry-preview').style.display = 'none';
+                entry.querySelector('.entry-full').style.display = 'block';
+                this.style.display = 'none';
+                entry.querySelector('.show-less').style.display = 'block';
+            });
+        });
+
+        document.querySelectorAll('.show-less').forEach(button => {
+            button.addEventListener('click', function() {
+                const entry = this.closest('.entry');
+                entry.querySelector('.entry-preview').style.display = 'block';
+                entry.querySelector('.entry-full').style.display = 'none';
+                this.style.display = 'none';
+                entry.querySelector('.show-more').style.display = 'block';
+            });
+        });
+    </script>
+</body>
+</html>
