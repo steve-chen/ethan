@@ -3,164 +3,79 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>HIDDEN FORMOSA</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/simplelightbox/2.10.3/simple-lightbox.min.css">
+    <title>Tabbed Navigation</title>
     <style>
-        body, html {
+        body {
             font-family: Arial, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            margin: 0;
-            padding: 0;
-            height: 100%;
         }
-        .container {
+        .tab {
             display: flex;
-            height: 100%;
-        }
-        nav {
-            width: 200px;
-            background-color: #f4f4f4;
-            padding: 20px;
-            overflow-y: auto;
-        }
-        nav h2 {
-            margin-top: 0;
-        }
-        nav ul {
-            list-style-type: none;
-            padding: 0;
-        }
-        nav ul ul {
-            padding-left: 20px;
-        }
-        main {
-            flex-grow: 1;
-            padding: 20px;
-            overflow-y: auto;
-        }
-        h1, h2 {
-            color: #2c3e50;
-        }
-        .entry {
-            margin-bottom: 40px;
-            border-bottom: 1px solid #eee;
-            padding-bottom: 20px;
-        }
-        .entry::after {
-            content: "";
-            display: table;
-            clear: both;
-        }
-        .entry img {
-            max-width: 100%;
-            height: auto;
-            margin-bottom: 10px;
-        }
-        .entry .image-left {
-            float: left;
-            margin-right: 20px;
-            max-width: 50%;
-        }
-        .entry .image-right {
-            float: right;
-            margin-left: 20px;
-            max-width: 50%;
-        }
-        .entry .image-center {
-            display: block;
-            margin: 0 auto;
-        }
-        .lightbox-image {
             cursor: pointer;
+            padding: 10px;
+            background-color: #f1f1f1;
+            margin-right: 5px;
         }
-        .entry-preview {
-            overflow: hidden;
-            max-height: 300px;
-            position: relative;
+        .tab.active {
+            background-color: #007bff;
+            color: white;
         }
-        .entry-full {
+        .content {
             display: none;
+            padding: 20px;
+            background-color: #f9f9f9;
+            border: 1px solid #ddd;
         }
-        .show-more, .show-less {
+        .content.active {
             display: block;
-            margin-top: 10px;
-            color: #3498db;
-            cursor: pointer;
-            text-decoration: underline;
         }
-        .fade-out {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 50px;
-            background: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,1));
+        .tab-container {
+            display: flex;
+            margin-bottom: 10px;
         }
     </style>
 </head>
 <body>
-    <div class="container">
-        <nav>
-            <h2>places to go</h2>
-            <ul>
-                <li>
-                    <ul>
-                        <li><a href="taroko gorge.html#national park">natonal park</a></li>
-                        <li><a href="shrimp fishing.html#food ">September</a></li>
-                        <!-- Add more months as needed -->
-                    </ul>
-                <!-- Add more years as needed -->
-            </ul>
-        </nav>
-        <main>
-            <h1>2024 Entries</h1>
 
-            <div id="taroko gorge" class="entry">
-                <h2> taroko gorge - Beauty in nature</h2>
-                <div class="entry-preview">
-                    <p>One of Taiwan's most GORGEous wonders. Have I gotten you there? But seriously, Taroko Gorge is famed for its breathtaking vistas, and I highly recommend it. When I visited there, I was surprised by the beautiful foliage, as well as how it wasn't as hot as the rest of Taiwan, with a gentle wind and refreshing air.</p>
-
-                    <p>The national park is well known for its lengthy tunnels that run from mountain to mountain. If you're lucky enough, you'll find waterfalls underground! How awesome does that seem? Everlasting streams of water gently carve the tunnels.</p>
-                        
-                    <p>The valley covered with luminescent trees has a history that dates back millions of years. The endless streams of water slowly eroded the valley into what it is today.
-                        My reccomendation in Taroko gorge national park starts from the Eternal Spring Shrine also called Changchun Shrine. This shrine is a photo jackpot, the backround is scattered with extravagent dark green trees, a shrine holding three Taiwanese tradtional shrines, a waterfall gushing water into the riverbed below. </p>
-                    <div class="fade-out"></div>
-                </div>
-                <a class="show-more">Show More</a>
-                <a class="show-less" style="display: none;">Show Less</a>
-            </div>
-
-            <!-- Add more entries as needed -->
-
-        </main>
+    <div class="tab-container">
+        <div class="tab active" onclick="showContent('home')">Home</div>
+        <div class="tab" onclick="showContent('adventures')">Adventures</div>
+        <div class="tab" onclick="showContent('podcasts')">Podcasts</div>
     </div>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/simplelightbox/2.10.3/simple-lightbox.min.js"></script>
+    <div id="home" class="content active">
+        <h2>Welcome to the Home Page</h2>
+        <p>Welcome to my website, here we show podcasts and photos as a American in a small island in Asia</p>
+    </div>
+
+    <div id="adventures" class="content">
+        <h2>Adventures</h2>
+        <p>Here, you can explore exciting photo galalries that tell a story.</p>
+    </div>
+
+    <div id="podcasts" class="content">
+        <h2>Podcasts</h2>
+        <p>Listen to the latest episodes of our podcasts right here.</p>
+    </div>
+
     <script>
-        new SimpleLightbox('.lightbox-image', {
-            /* options */
-        });
-
-        document.querySelectorAll('.show-more').forEach(button => {
-            button.addEventListener('click', function() {
-                const entry = this.closest('.entry');
-                entry.querySelector('.entry-preview').style.display = 'none';
-                entry.querySelector('.entry-full').style.display = 'block';
-                this.style.display = 'none';
-                entry.querySelector('.show-less').style.display = 'block';
+        function showContent(tab) {
+            // Hide all content
+            var contents = document.querySelectorAll('.content');
+            contents.forEach(function(content) {
+                content.classList.remove('active');
             });
-        });
 
-        document.querySelectorAll('.show-less').forEach(button => {
-            button.addEventListener('click', function() {
-                const entry = this.closest('.entry');
-                entry.querySelector('.entry-preview').style.display = 'block';
-                entry.querySelector('.entry-full').style.display = 'none';
-                this.style.display = 'none';
-                entry.querySelector('.show-more').style.display = 'block';
+            // Remove active class from all tabs
+            var tabs = document.querySelectorAll('.tab');
+            tabs.forEach(function(tab) {
+                tab.classList.remove('active');
             });
-        });
+
+            // Show the selected content and activate the tab
+            document.getElementById(tab).classList.add('active');
+            event.target.classList.add('active');
+        }
     </script>
+
 </body>
 </html>
